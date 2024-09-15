@@ -1,0 +1,134 @@
+{{ 'component-image-with-text-overlap.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+    <div class="image-with-text-overlay">
+        {% if section.settings.product_image != blank %}
+            <div class="image-with-text-overlap__media">
+                <img
+                    src="{{ section.settings.product_image | image_url }}"
+                    {% if section.settings.product_image.alt != blank %}
+                        alt="{{ section.settings.product_image.alt | escape }}"
+                    {% else %}
+                        role="presentation"
+                    {% endif %}
+                    height="auto"
+                    width="auto"
+                    loading="lazy"
+                >
+            </div>
+        {% endif %}
+        <div class="text-wrapper {{ section.settings.text_position }} {{ section.settings.text_overlay_position }}">
+            <div class="text-overlay__inner">
+                <div class="text-overlay__title">{{ section.settings.title }}</div>
+                <div class="text-overlay__subtitle">{{ section.settings.sub_title }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Image with Text Overlap",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "product_image",
+                "label": "Product Image"
+            },
+            {
+                "type": "richtext",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "richtext",
+                "id": "sub_title",
+                "label": "Sub Title"
+            },
+            {
+                "type": "select",
+                "id": "text_position",
+                "options": [
+                    {
+                        "value": "text--h-right",
+                        "label": "Right"
+                    },
+                    {
+                        "value": "text--h-center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "text--h-left",
+                        "label": "Left"
+                    }
+                ],
+                "default": "text--h-right",
+                "label": "Text Position"
+            },
+            {
+                "type": "select",
+                "id": "text_overlay_position",
+                "options": [
+                    {
+                        "value": "text-overlay--h-top",
+                        "label": "Top"
+                    },
+                    {
+                        "value": "text-overlay--h-center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "text-overlay--h-bottom",
+                        "label": "Bottom"
+                    }
+                ],
+                "default": "text-overlay--h-center",
+                "label": "Text Overlay Position"
+            },
+            {
+                "type": "range",
+                "id": "padding_top",
+                "min": 0,
+                "max": 100,
+                "step": 4,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_top",
+                "default": 36
+            },
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "min": 0,
+                "max": 100,
+                "step": 4,
+                "unit": "px",
+                "label": "t:sections.all.padding.padding_bottom",
+                "default": 36
+            }
+        ],
+        "presets": [
+            {
+                "name": "Image With Text Overlap",
+                "blocks": [
+                    
+                ]
+            }
+        ]
+
+    }
+{% endschema %}

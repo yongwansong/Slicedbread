@@ -1,0 +1,65 @@
+<style>
+  {% for block in section.blocks %}
+    {% assign color_name = block.settings.title | handle %}
+    [data-color-name="{{ color_name }}"]:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 4px;
+        transform: translateY(-50%);
+        flex: 0 0 auto;
+        z-index: 1;
+        width: 20px;
+        height: 20px;
+        margin: 1px;
+        margin-inline-end: 12px;
+        border-radius: 50%;
+        background-color: {{ block.settings.color }} !important;
+        {% if block.settings.image != blank %}
+            background-image: url('{{ block.settings.image | img_url: '50x' }}') !important;
+            background-repeat: no-repeat;
+            background-size: cover;
+        {% endif %}
+    }
+    [data-color-swatch="{{ color_name }}"] {
+      color: {{ block.settings.color }} !important;
+    }
+  {% endfor %}
+</style>
+
+
+{% schema %}
+  {
+    "name": "Color Swatch",
+    "class": "color-swatch",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "color-swatch",
+        "name": "Color Swatch",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Color Name"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Color Image"
+          }, {
+            "type": "color",
+            "id": "color",
+            "label": "Color",
+            "default": "transparent"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name": "Custom Variant Color"
+        }
+    ]
+  }
+{% endschema %}
