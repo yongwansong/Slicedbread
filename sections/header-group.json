@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -44,10 +53,36 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "custom_variant_color_cqnPwX": {
+      "type": "custom-variant-color",
+      "blocks": {
+        "color_swatch_XwyHhM": {
+          "type": "color-swatch",
+          "settings": {
+            "title": "Brown Pebbled Leather",
+            "color": "#334fb4"
+          }
+        },
+        "color_swatch_HhDAK7": {
+          "type": "color-swatch",
+          "settings": {
+            "title": "Woolenex Graphite",
+            "color": "#242833"
+          }
+        }
+      },
+      "block_order": [
+        "color_swatch_XwyHhM",
+        "color_swatch_HhDAK7"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "custom_variant_color_cqnPwX"
   ]
 }
