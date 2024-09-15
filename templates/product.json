@@ -20,6 +20,11 @@
             "text_style": "uppercase"
           }
         },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
         "collapsible_tab_RgUgj3": {
           "type": "collapsible_tab",
           "settings": {
@@ -27,11 +32,6 @@
             "icon": "check_mark",
             "content": "{{ product.metafields.custom.compatible_device | metafield_tag }}",
             "page": ""
-          }
-        },
-        "title": {
-          "type": "title",
-          "settings": {
           }
         },
         "price": {
@@ -109,8 +109,8 @@
       },
       "block_order": [
         "vendor",
-        "collapsible_tab_RgUgj3",
         "title",
+        "collapsible_tab_RgUgj3",
         "price",
         "variant_picker",
         "quantity_selector",
