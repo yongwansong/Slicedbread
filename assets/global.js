@@ -1098,8 +1098,21 @@ class VariantSelects extends HTMLElement {
         target.selectedOptions[0].dataset.optionSwatchFocalPoint || 'unset'
       );
     } else if (tagName === 'INPUT' && target.type === 'radio') {
-      console.log(selectedSwatchValue, 'herere')
       const selectedSwatchValue = target.closest(`.product-form__input`).querySelector('[data-selected-value]');
+      const colorValue = target.value;
+      document.querySelectorAll('.thumbnail-list li').forEach(item => {
+        if(item.dataset.thumbnailAlt == colorValue){
+          item.classList.remove('hidden');
+        }else{
+          item.classList.add('hidden');
+        }
+        document.querySelectorAll('.product__media-list li').forEach(item => {
+          item.classList.remove('is-active');
+          item.querySelector('button').removeAttribute('aria-current');
+        })
+        document.querySelectorAll(`[data-image-alt = ${colorValue}]`)[0].classList.add('is-active');
+        document.querySelectorAll(`[data-thumbnail-alt = ${colorValue}]`)[0].querySelector('button').setAttribute('aria-current', true);
+      })
       if (selectedSwatchValue) selectedSwatchValue.innerHTML = value;
     }
   }

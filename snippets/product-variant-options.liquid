@@ -81,7 +81,7 @@
       type="radio"
       id="{{ input_id }}"
       name="{{ input_name | escape }}"
-      value="{{ value | escape }}"
+      value="{{ value | escape | handleize}}"
       form="{{ product_form_id }}"
       {% if value.selected %}
         checked

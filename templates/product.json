@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -5,9 +14,19 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
+          }
+        },
+        "collapsible_tab_RgUgj3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Compatible Devices",
+            "icon": "check_mark",
+            "content": "{{ product.metafields.custom.compatible_device | metafield_tag }}",
+            "page": ""
           }
         },
         "title": {
@@ -46,28 +65,70 @@
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
             "share_label": "Share"
+          }
+        },
+        "collapsible_tab_hmPydH": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "eye",
+            "content": "<p>{{ product.metafields.custom.product_description.value }}<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_E7QAyn": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Features",
+            "icon": "eye",
+            "content": "{{ product.metafields.custom.product_feature | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_UWDf3m": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Dimensions",
+            "icon": "ruler",
+            "content": "<p>{{ product.metafields.custom.product_dimensions.value }}<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_ETwJ7F": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Materials",
+            "icon": "leather",
+            "content": "<p>{{ product.metafields.custom.product_materials.value }}<\/p>",
+            "page": ""
           }
         }
       },
       "block_order": [
         "vendor",
+        "collapsible_tab_RgUgj3",
         "title",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "collapsible_tab_hmPydH",
+        "collapsible_tab_E7QAyn",
+        "collapsible_tab_UWDf3m",
+        "collapsible_tab_ETwJ7F"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
@@ -75,6 +136,30 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "image_with_text_overlap_R4mrHA": {
+      "type": "image-with-text-overlap",
+      "settings": {
+        "product_image": "{{ product.metafields.custom.product_custom_image_1.value }}",
+        "title": "<h2>ICON Woolenex<\/h2>",
+        "sub_title": "<p>Refined durability with technical ability, Woolenex is incredibly lightweight, weather repellent + fade and tear resistant<\/p>",
+        "text_position": "text--h-left",
+        "text_overlay_position": "text-overlay--h-center",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_overlap_8eE9Ae": {
+      "type": "image-with-text-overlap",
+      "settings": {
+        "product_image": "{{ product.metafields.custom.product_image_2.value }}",
+        "title": "<h2>ICON Pebbled<br\/>Vegan Leather<\/h2>",
+        "sub_title": "<p>Refined durability with technical ability, Woolenex is incredibly lightweight, weather repellent + fade and tear resistant<\/p>",
+        "text_position": "text--h-right",
+        "text_overlay_position": "text-overlay--h-center",
+        "padding_top": 0,
+        "padding_bottom": 36
       }
     },
     "related-products": {
@@ -98,6 +183,8 @@
   },
   "order": [
     "main",
+    "image_with_text_overlap_R4mrHA",
+    "image_with_text_overlap_8eE9Ae",
     "related-products"
   ]
 }

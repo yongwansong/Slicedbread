@@ -35,6 +35,7 @@ if (!customElements.get('media-gallery')) {
         if (!activeMedia) {
           return;
         }
+        console.log('herere');
         this.elements.viewer.querySelectorAll('[data-media-id]').forEach((element) => {
           element.classList.remove('is-active');
         });
